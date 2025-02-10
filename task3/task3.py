@@ -34,4 +34,4 @@ def create_report_json_file():
     save_json(report_path, tests_data)
 
 
-main()
+create_report_json_file()
