@@ -6,22 +6,17 @@ def read_numbers(path_file: str) -> list[int]:
         return [int(i.strip()) for i in file]
 
 
-def min_num_for_movies(numbers: list[int]) -> int:
+def count_min_num_of_movies(numbers: list[int]) -> int:
     numbers.sort()
     median = numbers[len(numbers) // 2]
     return sum(map(lambda num: abs(num - median), numbers))
 
 
-def main():
-    if len(sys.argv) != 2:
-        print('Используйте такое написание: python3 task4.py numbers.txt')
-        return
-
+def res():
     path_file = sys.argv[1]
     nums = read_numbers(path_file)
-
-    res = min_num_for_movies(nums)
+    res = count_min_num_of_movies(nums)
     print(res)
 
 
-main()
+res()

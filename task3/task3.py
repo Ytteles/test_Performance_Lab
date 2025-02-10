@@ -25,10 +25,7 @@ def fill_values(data: dict, values_dict: dict) -> None:
                 fill_values(data[key], values_dict)
 
 
-def main():
-    if len(sys.argv) != 4:
-        print('Используйте такое написание: python3 task3.py tests.json values.json report.json')
-        return
+def create_report_json_file():
     tests_path, values_path, report_path = sys.argv[1], sys.argv[2], sys.argv[3]
     tests_data = load_json(tests_path)
     values_data = load_json(values_path)
